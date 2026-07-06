@@ -1,0 +1,53 @@
+# Python bytecode / cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+env/
+/bin/
+/include/
+/lib/
+/share//
+
+# Trained models and serialized objects
+models/*.joblib
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# IDE files
+.vscode/
+.idea/
+
+# Large Dataset Files (Olist CSV datasets)
+Data/raw/*.csv
+Data/cleaned/*.csv
+Data/cleaned/*.parquet
+Data/cleaned/*.joblib
