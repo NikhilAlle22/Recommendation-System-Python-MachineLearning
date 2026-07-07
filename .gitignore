@@ -37,7 +37,7 @@ env/
 /share//
 
 # Trained models and serialized objects
-models/*.joblib
+# models/*.joblib
 
 # Jupyter Notebook checkpoints
 .ipynb_checkpoints/
