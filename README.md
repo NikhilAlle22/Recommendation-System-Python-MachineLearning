@@ -6,6 +6,13 @@ This system is designed with a production-first mindset: it segments users into 
 
 ---
 
+## 🚀 Live Demo
+
+*   **Streamlit Interactive Dashboard**: [https://recommendation-dashboard.onrender.com/](https://recommendation-dashboard.onrender.com/)
+*   **FastAPI REST API Documentation (Swagger)**: [https://recommendation-system-python-3kq1.onrender.com/docs](https://recommendation-system-python-3kq1.onrender.com/docs)
+
+---
+
 ## 📊 Business Goals & Success Metrics
 
 ### Business Objective
