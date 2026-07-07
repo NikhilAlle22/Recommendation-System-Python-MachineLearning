@@ -9,6 +9,14 @@ def main():
     raw_data_dir = os.path.join(base_dir, "Data", "raw")
     models_dir = os.path.join(base_dir, "models")
     
+    # Check if raw data files are present (they are gitignored in server deployments)
+    required_file = os.path.join(raw_data_dir, "olist_customers_dataset.csv")
+    if not os.path.exists(required_file):
+        print(f"\n[NOTICE] Raw data file '{required_file}' not found.")
+        print("Skipping model training pipeline because raw datasets are not present (typical on cloud deployments).")
+        print("Existing pre-trained models in the 'models/' folder will be used by the API.\n")
+        return
+    
     print("--- STEP 1: Ingesting & Cleaning Data ---")
     master_df = load_and_clean_data(raw_data_dir)
     
