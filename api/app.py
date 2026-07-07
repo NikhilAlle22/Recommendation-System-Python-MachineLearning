@@ -3,11 +3,17 @@ import os
 from fastapi import FastAPI, HTTPException, Query
 from src.recommender import RecommenderSystem
 
+from fastapi.responses import RedirectResponse
+
 app = FastAPI(
     title="E-Commerce Recommendation System API",
     description="Serving personalized and content-based recommendations for Olist e-commerce dataset.",
     version="1.0.0"
 )
+
+@app.get("/", include_in_schema=False)
+def root_redirect():
+    return RedirectResponse(url="/docs")
 
 # Global reference to Recommender System
 recommender = None
