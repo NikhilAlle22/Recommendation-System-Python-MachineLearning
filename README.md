@@ -88,11 +88,7 @@ E-commerce_Recommendation/
 │   └── user_history.joblib
 │
 ├── notebooks/               # Jupyter notebooks for EDA and prototyping
-│   ├── 01_data_cleaning.ipynb
-│   ├── 02_eda.ipynb
-│   ├── data_cleaning.ipynb
-│   ├── feature_engineering.ipynb
-│   └── models.ipynb
+│   └── 01_data_cleaning.ipynb
 │
 ├── src/                     # Core Python modules package
 │   ├── __init__.py
@@ -102,7 +98,10 @@ E-commerce_Recommendation/
 │   └── recommender.py       # Production router and enrichment layer
 │
 ├── train.py                 # Master pipeline training & evaluation script
-├── requirements.txt         # Project dependencies
+├── requirements.txt         # Project dependencies (pinned to working versions)
+├── api.Dockerfile           # Container configuration for backend API
+├── dashboard.Dockerfile     # Container configuration for frontend UI
+├── docker-compose.yml       # Docker orchestrator for multi-container run
 └── README.md                # Project documentation (this file)
 ```
 
@@ -157,6 +156,18 @@ Run the Streamlit dashboard:
 streamlit run dashboards/dashboard.py
 ```
 This launches a browser page where you can simulate returning or cold-start users, filter popularity metrics by Brazil states, search for similar products, and inspect pricing/rating distributions.
+
+### 6. Alternative: Run via Docker Compose (Containerized Run)
+If you have Docker installed, you can build and run both the API and Streamlit Dashboard simultaneously using a single command:
+```bash
+# Build images and start services in the background
+docker compose up --build -d
+```
+* Once running, the FastAPI service will be accessible at **http://localhost:8000** and the Streamlit Dashboard will be accessible at **http://localhost:8501**.
+* To stop the services:
+  ```bash
+  docker compose down
+  ```
 
 ---
 
